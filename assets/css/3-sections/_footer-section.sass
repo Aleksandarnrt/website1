@@ -1,0 +1,50 @@
+/*footer design with copyright text and mini navigation*/
+footer
+    background: 
+        color: white
+    color: white
+    
+    .bar 
+        @extend %bars
+        max-width: 1200px
+        margin-bottom: 66px
+        border: 1px solid #d0d8dd
+    
+    @media screen and (max-width: 1024px)
+        max-width: 90%
+        margin: 0 auto
+    /*container that contains everything in footer*/
+    .lockup
+        max-width: 320px
+        margin: 0 auto
+        padding: 10px 0px
+        +clearfix
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        align-items: center
+            
+        img
+            max-width: 245px
+            margin-bottom: 10px
+        
+        .copyright
+            margin: 0 0 50px 0
+            font:
+                size: 14px
+                family: 'Leto', sans-serif
+                weight: 400
+            color: $copyright-color
+        
+            
+    @media screen and (max-width: 500px)
+        .lockup 
+            img
+                max-width: 200px
+            .copyright 
+                font-size: 11px
+            
+            
+            
+            
+            

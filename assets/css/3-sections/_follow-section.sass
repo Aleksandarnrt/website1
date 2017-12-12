@@ -1,0 +1,49 @@
+/*section design with heading an social icons*/
+section#follow
+    max-width: 100%
+    overflow: hidden
+    padding-bottom: 50px
+    .bar 
+        @extend %bars
+        max-width: 1200px
+        margin-bottom: 66px
+        border: 1px solid #d0d8dd
+    @media screen and (max-width: 1024px)
+        max-width: 90%
+        margin: 0 auto
+        
+    h3
+        @extend %small-bold
+        text-align: center
+    
+    .social-links
+        max-width: 180px
+        margin: 20px auto 50px
+        +display(flex)
+        justify-content: space-around
+        +flex-wrap(wrap)
+        opacity: 1
+        transition: all 0.3s ease-in-out
+        //transform: translateX(-200px)
+        a
+            display: block
+            background: $icon-color
+            +size(70px)
+            text-align: center
+            line-height: 70px
+            color: white
+            font-size: 38px
+            transition: all 0.3s ease-in-out
+            
+            &:hover
+                opacity: 0.5
+                transform: scale(1.2)
+            &.icon-twitter
+                background: #20b9ff
+            &.icon-facebook
+                background: #3c5a9a
+            
+        /*class for parallax*/
+        &.is-showing
+            opacity: 1
+            transform: translateX(0px)

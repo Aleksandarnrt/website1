@@ -1,0 +1,48 @@
+section#prints
+    h3
+        @extend %small-bold
+        text-align: center
+    .bar
+        @extend %bars
+    .paraf
+        @extend %parafs
+    .prints-wrapper
+        max-width: 1200px
+        margin: 0 auto
+        padding: 20px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-direction: row
+    
+        img
+            max-width: 330px
+            max-height: 250px
+            box-shadow: -10px 10px #eff3f5
+            margin-bottom: 80px
+            @extend %paralax-img
+            
+    @media screen and (max-width: 1024px)
+        .paraf
+            margin-bottom: 20px
+        .prints-wrapper
+            img
+                max-width: 300px
+                max-height: 220px
+    @media screen and (max-width: 768px)
+        .paraf 
+            max-width: 80%
+        .prints-wrapper
+            flex-direction: column
+            img
+                max-width: 330px
+                max-height: 250px
+                box-shadow: 0 8px 26px -6px black
+                margin-bottom: 50px
+                border-radius: 2%
+            
+                    
+            @media screen and (max-width: 320px)
+                img
+                    max-width: 310px
+                    max-height: 230px

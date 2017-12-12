@@ -1,0 +1,390 @@
+.home-wrap 
+    /*background header design*/
+    header#header
+        
+        max-height: 1080px
+        background:
+            image: url("/assets/img/bg-img.jpg")
+            repeat: no-repeat
+            size: cover
+            position: center
+            
+        &:after
+            content: " ";
+            display: block
+            width: 100%
+            padding-top: 56.25%
+        
+        
+        /*container that define logo and navigation */
+        .header-wrapper
+            padding: 35px 20px 0 20px
+            display: flex
+            justify-content: space-around
+            align-items: center
+            .logo, .logo-dark, nav
+                margin-top: 30px
+            
+                
+            /*logo design*/
+            .logo, .logo-dark
+                width: 197px
+                height: 96px
+                cursor: pointer
+            .logo
+                background:
+                    image: url("/assets/img/logo.png")
+                    size: contain
+                    repeat: no-repeat
+                &.is-open
+                    display: none 
+
+            .logo-dark
+                background:
+                    image: url("/assets/img/logo-dark.png")
+                    size: contain
+                    repeat: no-repeat
+                display: none
+                &.is-open
+                    display: block
+                    z-index: 3
+
+                
+            /*navigation design */
+            nav
+                display: flex
+                a
+                    display: inline-block
+                    margin-left: 100px
+                    font-size: 18px
+                    font-family: 'Lato', sans-serif
+                    font-weight: 700
+                    text-transform: uppercase
+                    color: white
+                    transition: all .3s ease-in-out
+                    &:after
+                        content: ''
+                        display: block
+                        width: 0
+                        height: 2px
+                        background: white
+                        transition: width .3s
+                    &:hover:after
+                        width: 100%
+                    
+            /*burger for navigation that contains litle animation when user click on it*/
+            .mobile-nav-toggle
+                width: 50px
+                height: 50px
+                display: none
+                align-items: center
+                margin: 20px 20px 0 0
+                
+                /* burger design */
+                span,
+                span:before,
+                span:after
+                    content: ''
+                    display: block
+                    height: 2px
+                    background: white
+                    position: relative
+                    width: 100%
+                    transition: all .3s ease-in-out
+                span:before
+                    top: 15px
+                span:after
+                    top: -17px 
+                    
+                &.is-open span
+                    background: transparent
+                    z-index: 3
+                &.is-open span:before,
+                &.is-open  span:after
+                    transform-origin: center
+                    transform: rotate(45deg)
+                    background: $h3-text-color
+                    top: 0
+                &.is-open  span:after
+                    transform: rotate(-45deg)
+
+        /*header text design*/
+
+        h1
+            text-align: center
+            
+            padding-top: 150px
+            font:
+                size: 5vw
+                weight: 900
+                family: 'Lato', sans-serif
+            color: white
+            text-transform: uppercase
+            margin: 0 0 20px 0
+
+            
+        
+
+        /*kicker design*/
+        .kicker
+            width: 900px
+            margin: 0 auto
+            font:
+                size: 28px
+                weight: 700
+                family: 'Lato', sans-serif
+            color: white
+            text-align: center
+            letter-spacing: .05em 
+            line-height: 1
+            
+        /* kicker for mobile phones*/
+        .mobile-kicker
+            display: none
+
+        /*animation for parallax technology*/
+        .logo, nav, h1, .kicker, .mobile-kicker 
+            opacity: 0
+            transition: all 0.3s ease-in-out
+            transform: translateY(-100px)
+
+
+            &.is-showing 
+                opacity: 1
+                transform: translateY(0px)
+
+        /*container for buttons*/        
+        .ctas  
+            max-width: 400px
+            margin: 50px auto 
+            +display(flex)  
+            justify-content: center 
+            +flex-wrap(wrap)
+            opacity: 1
+            transition: all 0.3s ease-in-out 
+            //transform: translateX(-200px)  
+            
+            .buy
+                background: #21c2f8 
+                color: white  
+            .learn 
+                background: transparent
+                color: white
+                padding: 14.4px 25px
+                border: 1px solid white
+        
+                    
+    /*mobile navigation design, with dropdown effect*/
+
+    .mobile-nav
+        display: none
+        position: absolute
+        z-index: 3
+        width: 100%
+        background: rgba(white, .8)
+        margin: 0 0 0 0
+        padding-top: 110px
+        transition: all 0.3s ease-in-out
+        transform: translateY(-120%)
+        
+        /*unordered list that contains nav links*/
+        ul
+            list-style: none
+            margin: 0
+            padding: 0
+
+            li
+                text-align: center
+                margin: 45px 0
+                a
+                    text-decoration: none
+                    color: $h3-text-color
+                    text-transform: uppercase
+                    font:
+                        size: 30px
+                        weight: 700
+                        family: 'Leto', sans-serif
+                        
+        /*container that contains social icons in navigation*/
+        .follow-us
+            padding: 0 20px 20px 20px
+            display: flex
+            justify-content: space-around
+            align-items: center
+
+            p
+                font: 
+                    size: 24px
+                    weight: 700
+                    family: 'Leto', sans-serif
+                color: $h3-text-color
+                text-transform: uppercase
+            .social
+                a
+                    display: inline-block
+                    margin-left: 30px
+                    font-size: 40px
+                    color: $h3-text-color
+
+    /*4K screens*/
+    @media screen and (max-width: 2560px)                
+        header#header
+            max-height: 1500px 
+            h1
+                font-size: 4vw
+    
+    @media screen and (max-width: 1920px)                
+        header#header
+            h1
+                font-size: 5vw
+            
+    /*Large laptops*/
+    @media screen and (max-width: 1440px)
+        header#header
+            .header-wrapper
+                nav
+                    a
+                        margin-left: 80px
+            h1
+                span
+                    font-size: 6.7vw
+            .kicker
+                width: 850px
+                font-size: 24px
+    
+    /*My laptop resolution*/
+    @media screen and (max-width: 1366px)    
+        header#header
+            .header-wrapper
+                padding: 0 0 20px 0
+                .logo, .logo-dark
+                    width: 157px
+                    padding-top: 10px
+                nav
+                    a
+                        margin-left: 80px
+                        font-size: 15px
+            h1
+                span
+                    font-size: 5vw
+            .kicker
+                width: 650px
+                font-size: 20px
+                
+    /*Small laptops*/
+    @media screen and (max-width: 1024px) 
+        header#header
+            h1
+                span
+                    font-size: 7vw
+            .kicker
+                width: 650px
+                line-height: 1
+    /*media query for tablets */
+
+    @media screen and (max-width: 768px)
+        header#header
+            height: 700px
+            .header-wrapper
+                justify-content: space-between
+                padding: 0 40px 20px 40px
+                .mobile-nav-toggle
+                    display: flex
+                nav
+                    display: none
+                
+            h1
+                padding-top: 100px
+                span
+                    font-size: 9vw
+        .kicker
+            max-width: 90%
+            
+        .mobile-nav
+            ul
+                li
+                    padding: 23px 0
+                    a
+                        font:
+                            size: 30px
+                            weight: 700
+                            family: 'Leto', sans-serif
+            .follow-us
+                p, .social>a
+                    font-size: 30px
+           
+                
+        /* .is-open is class that triggers mobile navigation from jQuery*/
+        .mobile-nav.is-open
+            display: block
+            transform: translateY(0%)   
+    
+    /*media query for phoneblets, to manage dropdown navigation*/
+            
+    @media screen and (max-width: 668px)
+        .mobile-nav
+            ul
+                li
+                    padding: 21px 0
+                
+    /*Large mobile responsive*/
+        
+    @media screen and (max-width: 468px)
+        header#header
+            height: 600px
+            .header-wrapper 
+                .logo, .logo-dark
+                    width: 132px
+                .mobile-nav-toggle 
+                    margin-top: 0px
+            @media screen and (max-width: 320px)
+                justify-content: space-between
+                padding: 10px 10px 0 10px
+            h1
+                padding: 80px 0 20px 0
+                font-size: 60px
+                line-height: 1
+            .kicker 
+                display: none
+            .mobile-kicker
+                max-width: 90%
+                text-transform: uppercase
+                display: block
+                margin: 0 auto
+                padding: 0px 0 20px 0
+                color: white
+                font:
+                    size: 24px
+                    weight: 700
+                    family: 'Lato', sans-serif
+                text-align: center
+                letter-spacing: .05em
+                line-height: 1
+        
+                
+        .mobile-nav
+            ul
+                li
+                    padding: 25px 0
+                    a
+                        font-size: 20px
+            .follow-us
+                p, .social>a
+                    font-size: 20px    
+                    
+    /*Small mobile responsive*/                
+    @media screen and (max-width: 320px)
+        header#header
+            height: 600px
+            .header-wrapper
+                justify-content: space-between
+                padding: 0px 10px 0 10px
+                .logo, .logo-dark 
+                    width: 120px
+                 
+            .ctas 
+                .buy 
+                    margin-bottom: 10px
+        
+        
+        
